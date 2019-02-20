@@ -22,11 +22,13 @@ class App extends Component {
       }
     ]
   };
-
+checkMark = (id) => {
+  
+}
   render() {
     return (
       <div className="App">
-        <Todos todos={this.state.todos} />
+        <Todos todos={this.state.todos} checkMark={this.checkMark}/>
       </div>
     );
   }
