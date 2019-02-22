@@ -12,6 +12,12 @@ export class TodoItem extends Component {
         }
     }
 
+    buttonStyle = () => {
+      return {
+        float: 'right'
+      }
+    }
+
   render() {
       const { id , title} = this.props.todo
     return (
@@ -19,8 +25,10 @@ export class TodoItem extends Component {
         <p>
            <input type="checkbox" onChange={this.props.checkMark.bind(this, id)}/>
            {title}
+           <button onClick={this.props.deleteNode.bind(this,id)} style={this.buttonStyle()}>Delete</button>
         {/* {this.props.todo.title}   */}
         </p>
+        
       </div>
     )
   }

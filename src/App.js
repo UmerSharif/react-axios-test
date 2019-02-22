@@ -18,7 +18,7 @@ class App extends Component {
       {
         id: 3,
         title: "wanna hang out tonight at my plave",
-        isCompleted: true
+        isCompleted: false
       }
     ]
   };
@@ -32,10 +32,17 @@ class App extends Component {
       })
     });
   };
+
+  deleteNode = (id) => {
+    console.log(id)
+  }
   render() {
     return (
       <div className="App">
-        <Todos todos={this.state.todos} checkMark={this.checkMark} />
+        <Todos todos={this.state.todos} 
+        checkMark={this.checkMark} 
+        deleteNode={this.deleteNode}
+        />
       </div>
     );
   }
