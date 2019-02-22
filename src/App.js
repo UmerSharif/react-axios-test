@@ -34,8 +34,13 @@ class App extends Component {
   };
 
   deleteNode = (id) => {
-    console.log(id)
-  }
+    
+    this.setState({todos: [...this.state.todos.filter(todo => {
+      return todo.id !== id
+    })]
+    })
+    
+  } 
   render() {
     return (
       <div className="App">
