@@ -22,13 +22,20 @@ class App extends Component {
       }
     ]
   };
-checkMark = (id) => {
-  
-}
+  checkMark = id => {
+    this.setState({
+      todos: this.state.todos.map(todo => {
+        if (todo.id === id) {
+          todo.isCompleted = !todo.isCompleted;
+        }
+        return todo;
+      })
+    });
+  };
   render() {
     return (
       <div className="App">
-        <Todos todos={this.state.todos} checkMark={this.checkMark}/>
+        <Todos todos={this.state.todos} checkMark={this.checkMark} />
       </div>
     );
   }

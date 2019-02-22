@@ -16,7 +16,7 @@ export class TodoItem extends Component {
       const { id , title} = this.props.todo
     return (
       <div style={this.getStyle()}>
-        <p> 
+        <p>
            <input type="checkbox" onChange={this.props.checkMark.bind(this, id)}/>
            {title}
         {/* {this.props.todo.title}   */}
