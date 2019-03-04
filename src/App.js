@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Header from './components/Header'
 import "./App.css";
 import Todos from "./components/Todos";
+import AddTodo from "./components/AddTodo"
 
 class App extends Component {
   state = {
@@ -50,6 +51,7 @@ class App extends Component {
         checkMark={this.checkMark} 
         deleteNode={this.deleteNode}
         />
+      <AddTodo />
       </div>
     );
   }
