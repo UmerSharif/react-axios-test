@@ -42,7 +42,12 @@ class App extends Component {
     })]
     })
     
-  } 
+  }
+  
+  InsertData = (passedTitle) => {
+   this.setState({todos: this.state.todos.concat({id: this.state.todos.length+1, title: passedTitle, isCompleted: false})})
+   // in es6
+  }
   render() {
     return (
       <div className="App">
@@ -51,7 +56,7 @@ class App extends Component {
         checkMark={this.checkMark} 
         deleteNode={this.deleteNode}
         />
-      <AddTodo />
+      <AddTodo InsertData={this.InsertData}/>
       </div>
     );
   }

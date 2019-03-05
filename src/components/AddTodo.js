@@ -12,7 +12,7 @@ export default class AddTodo extends Component {
   onSubmit = (e) => {
     e.preventDefault()
     this.props.InsertData(this.state.title)
-    this.state.title = ''
+    this.setState({title: ''})
   }
   render() {
     return (
