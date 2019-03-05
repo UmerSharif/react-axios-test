@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import Header from './components/Header'
+import Header from "./components/Header";
 import "./App.css";
 import Todos from "./components/Todos";
-import AddTodo from "./components/AddTodo"
+import AddTodo from "./components/AddTodo";
 
 class App extends Component {
   state = {
@@ -35,28 +35,41 @@ class App extends Component {
     });
   };
 
-  deleteNode = (id) => {
-    
-    this.setState({todos: [...this.state.todos.filter(todo => {
-      return todo.id !== id
-    })]
-    })
-    
-  }
-  
-  InsertData = (passedTitle) => {
-   this.setState({todos: this.state.todos.concat({id: this.state.todos.length+1, title: passedTitle, isCompleted: false})})
-   // in es6
-  }
+  deleteNode = id => {
+    this.setState({
+      todos: [
+        ...this.state.todos.filter(todo => {
+          return todo.id !== id;
+        })
+      ]
+    });
+  };
+
+  InsertData = passedTitle => {
+    // older version using concat
+    //this.setState({todos: this.state.todos.concat({id: this.state.todos.length+1, title: passedTitle, isCompleted: false})})
+    // in es6 the following way
+    this.setState({
+      todos: [
+        ...this.state.todos,
+        {
+          id: this.state.todos.length + 1,
+          title: passedTitle,
+          isCompleted: false
+        }
+      ]
+    });
+  };
   render() {
     return (
       <div className="App">
-      <Header />
-        <Todos todos={this.state.todos} 
-        checkMark={this.checkMark} 
-        deleteNode={this.deleteNode}
+        <Header />
+        <Todos
+          todos={this.state.todos}
+          checkMark={this.checkMark}
+          deleteNode={this.deleteNode}
         />
-      <AddTodo InsertData={this.InsertData}/>
+        <AddTodo InsertData={this.InsertData} />
       </div>
     );
   }
