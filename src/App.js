@@ -19,7 +19,7 @@ class App extends Component {
       },
       {
         id: 3,
-        title: "wanna hang out tonight at my plave",
+        title: "wanna hang out tonight",
         isCompleted: false
       }
     ]
