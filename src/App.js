@@ -67,7 +67,7 @@ class App extends Component {
       <Router>
         <div className="App">
           <Header />
-          <Route
+          <Route exact
             path="/"
             render={props => (
               <React.Fragment>
